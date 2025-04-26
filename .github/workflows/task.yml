@@ -1,7 +1,7 @@
 name: "Task- Terraform IAC"
  
 on:
- pull_request:
+ push:
     branches:
       - main
  
