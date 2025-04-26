@@ -4,7 +4,8 @@ on:
  push:
     branches:
       - main
- 
+env:
+    AWS_REGION: ap-south-1 
 jobs:
   task1:
     name: "tflint"
@@ -49,7 +50,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::061051245586:oidc-provider/github.kyndryl.net/_services/token #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
-          #aws-region: ${{ env.AWS_REGION }
+          aws-region: ${{ env.AWS_REGION }
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
