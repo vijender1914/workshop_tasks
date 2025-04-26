@@ -6,6 +6,9 @@ on:
       - main
 env:
     AWS_REGION: ap-south-1 
+permissions:
+    id-token: write
+    contents: read    
 jobs:
   task1:
     name: "tflint"
