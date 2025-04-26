@@ -49,7 +49,7 @@ jobs:
   env:
   #  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   #  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-     AWS_REGION: us-east-1
+     AWS_REGION: ap-south-1
   tf_deploy:
     name: Terraform_deploy
     runs-on: self-hosted
@@ -60,7 +60,7 @@ jobs:
         - name: configure aws credentials
           uses: aws-actions/configure-aws-credentials@v3
           with:
-          role-to-assume: arn:aws:iam::273381533537:role/GitHubAction-AssumeRoleWithAction #change to reflect your IAM role’s ARN
+          role-to-assume: arn:aws:iam::061051245586:role/GitHubAction-AssumeRoleWithAction #change to reflect your IAM role’s ARN
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
  
